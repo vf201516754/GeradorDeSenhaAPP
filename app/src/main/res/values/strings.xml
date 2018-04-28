@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Gerador De Senha</string>
+    <string name="lb_titulo">Gerar senha</string>
+    <string name="btn_gerar_senha">Gerar Senha</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_alert_ok">Ok</string>
+
+    <string-array name="servico_spinner">
+        <item>SELECIONE UM SERVICO</item>
+        <item>AUTENTICAÇÃO</item>
+    </string-array>
+
+    <string-array name="fila_spinner">
+        <item>SELECIONE UMA FILA</item>
+        <item>NORMAL</item>
+        <item>PREFERENCIA</item>
+    </string-array>
+
+</resources>

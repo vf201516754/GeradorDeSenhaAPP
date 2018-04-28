@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/lb_gerar_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lb_titulo"
+        android:textSize="30dp" />
+
+    <Spinner
+        android:id="@+id/servico_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:entries="@array/servico_spinner"/>
+
+    <Spinner
+        android:id="@+id/fila_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:entries="@array/fila_spinner"/>
+
+    <Button
+        android:id="@+id/btn_gerar_agora"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="@string/btn_gerar_senha"
+        android:onClick="onClickGerarSenha"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/btn_cancelar"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="@string/btn_cancelar"
+        android:onClick="onClickCancelar"
+        android:textSize="30dp" />
+</LinearLayout>
