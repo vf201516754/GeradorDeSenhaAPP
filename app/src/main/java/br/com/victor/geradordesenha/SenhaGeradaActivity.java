@@ -1,11 +1,11 @@
 package br.com.victor.geradordesenha;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-public class SenhaGeradaActivity extends AppCompatActivity {
+public class SenhaGeradaActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,7 +13,7 @@ public class SenhaGeradaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_senha_gerada);
         TextView lbSenha = (TextView)findViewById(R.id.lb_senha_gerada);
         Intent intent = getIntent();
-        Senha senha = (Senha)intent.getSerializableExtra("senha");
-        lbSenha.setText(senha.toString());
+        String resultado = (String) intent.getSerializableExtra(MainActivity.SENHA);
+        lbSenha.setText(resultado);
     }
 }

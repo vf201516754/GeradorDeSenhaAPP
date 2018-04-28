@@ -1,8 +1,8 @@
 package br.com.victor.geradordesenha;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     TextView lbTitulo;
     Spinner spinnerServico;
@@ -24,15 +24,17 @@ public class MainActivity extends AppCompatActivity {
     String fila = "Selecione uma fila";
 
     Intent intent;
-    Senha senha;
+    String resultado;
+
 
     public static final String URL = "http://10.0.2.2:8080/projeto_cartorio/";
-    //public static final String SENHA = "br.com.victor.geradordesenha.senha";
+    public static final String SENHA = "br.com.victor.geradordesenha.senha";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         lbTitulo = (TextView) findViewById(R.id.lb_gerar_senha);
 
@@ -53,15 +55,16 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     try {
-                        senha = SenhaNetwork.gerarSenha(URL, servico, fila);
+                        SenhaNetwork.gerarSenha(URL, servico, fila);
+                        resultado = SenhaNetwork.buscaUltimaSenha(URL);
                         runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                intent.putExtra("senha", senha);
-                                startActivity(intent);
-                            }
-                        });
-
+                                          @Override
+                                          public void run() {
+                                              intent.putExtra(SENHA, resultado);
+                                              startActivity(intent);
+                                          }
+                                      }
+                        );
                     } catch (IOException e)  {
                         e.printStackTrace();
                     }

@@ -1,14 +1,34 @@
 package br.com.victor.geradordesenha;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Senha implements Serializable {
 
+    private int id;
+    private int numero;
     private String codigo;
-    private String dataAbertura;
-    private String dataFechamento;
-    private String servico;
-    private String fila;
+    private Date dataAbertura;
+    private Date dataFechamento;
+    private int isActive;
+    private Fila fila;
+    private Servico servico;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
 
     public String getCodigo() {
         return codigo;
@@ -18,46 +38,52 @@ public class Senha implements Serializable {
         this.codigo = codigo;
     }
 
-    public String getDataAbertura() {
+    public Date getDataAbertura() {
         return dataAbertura;
     }
 
-    public void setDataAbertura(String dataAbertura) {
+    public void setDataAbertura(Date dataAbertura) {
         this.dataAbertura = dataAbertura;
     }
 
-    public String getDataFechamento() {
+    public Date getDataFechamento() {
         return dataFechamento;
     }
 
-    public void setDataFechamento(String dataFechamento) {
+    public void setDataFechamento(Date dataFechamento) {
         this.dataFechamento = dataFechamento;
     }
 
-    public String getServico() {
-        return servico;
+    public int getIsActive() {
+        return isActive;
     }
 
-    public void setServico(String servico) {
-        this.servico = servico;
+    public void setIsActive(int isActive) {
+        this.isActive = isActive;
     }
 
-    public String getFila() {
+    public Fila getFila() {
         return fila;
     }
 
-    public void setFila(String fila) {
+    public void setFila(Fila fila) {
         this.fila = fila;
+    }
+
+    public Servico getServico() {
+        return servico;
+    }
+
+    public void setServico(Servico servico) {
+        this.servico = servico;
     }
 
     @Override
     public String toString() {
-        return "Senha{" +
-                "\ncodigo='" + codigo + '\'' +
-                "\ndataAbertura='" + dataAbertura + '\'' +
-                "\ndataFechamento='" + dataFechamento + '\'' +
-                "\nservico='" + servico + '\'' +
-                "\nfila='" + fila + '\'' +
-                "\n}";
+        return "Senha: " +
+                "\nCodigo= " + codigo +
+                "\nDataAbertura = " + dataAbertura +
+                "\nDataFechamento = " + dataFechamento +
+                "\n";
     }
 }
