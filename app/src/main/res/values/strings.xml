@@ -4,6 +4,10 @@
     <string name="btn_gerar_senha">Gerar Senha</string>
     <string name="btn_cancelar">Cancelar</string>
     <string name="btn_alert_ok">Ok</string>
+    <string name="btn_login_painel">Painel</string>
+    <string name="btn_login_senha">Senha</string>
+    <string name="lb_titulo_cartorio">Cartorio-de-Notas</string>
+    <string name="lb_login_slogan">Gere suas senha sem complicação!</string>
 
     <string-array name="servico_spinner">
         <item>SELECIONE UM SERVICO</item>
@@ -15,5 +19,6 @@
         <item>NORMAL</item>
         <item>PREFERENCIA</item>
     </string-array>
+    <string name="title_activity_login">loginActivity</string>
 
 </resources>
